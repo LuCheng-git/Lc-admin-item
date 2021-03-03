@@ -9,7 +9,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import './components/common/element'
 
 Vue.config.productionTip = false
-
+Vue.use(router)
 
 new Vue({
   render: h => h(App),
