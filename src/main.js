@@ -6,7 +6,7 @@ import router from './router'
 
 //ele 按需引入
 import 'element-ui/lib/theme-chalk/index.css'
-import './components/common/element'
+import '@/plugins/element'
 
 Vue.config.productionTip = false
 Vue.use(router)
