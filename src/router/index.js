@@ -21,7 +21,7 @@ const constantRoutes = [
   },
 ]
 
-const creatRouter = () => {
+const createRouter = () => 
   new VueRouter({
     scrollBehavior: () => ({
       y: 0,
@@ -29,8 +29,9 @@ const creatRouter = () => {
     mode: 'hash',
     routes: constantRoutes,
   })
-}
 
-const router = creatRouter()
+
+const router = createRouter()
+
 
 export default router
