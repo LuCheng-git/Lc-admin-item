@@ -6,6 +6,7 @@
     </div>
     <div class="title">
       后台管理系统练习
+      <span @click="handleFullScreen" style="cursor:pointer">全屏事件</span>
     </div>
     <div class="login">
       <div class="header-user">
@@ -36,6 +37,7 @@ export default {
   data() {
     //这里存放数据
     return {
+      fullscreen: false,
       name: "admin",
     };
   },
@@ -56,6 +58,33 @@ export default {
         // window.location.href = "http://www.baidu.com"
         this.$router.push('./')
       }
+    },
+    // 全屏事件
+    handleFullScreen(){
+      let element = document.documentElement;
+      if(this.fullscreen){
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.webkitCancelFullScreen) {
+          document.webkitCancelFullScreen();
+        } else if (document.mozCancelFullScreen) {
+          document.mozCancelFullScreen();
+        } else if (document.msExitFullscreen) {
+          document.msExitFullscreen();
+        }
+      } else {
+        if (element.requestFullscreen) {
+          element.requestFullscreen();
+        } else if (element.webkitRequestFullScreen) {
+          element.webkitRequestFullScreen();
+        } else if (element.mozRequestFullScreen) {
+          element.mozRequestFullScreen();
+        } else if (element.msRequestFullscreen) {
+          // IE11
+          element.msRequestFullscreen();
+        }
+      }
+      this.fullscreen = !this.fullscreen;
     }
   },
   //生命周期 - 创建完成（可以访问当前this实例）
