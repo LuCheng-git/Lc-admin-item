@@ -72,6 +72,7 @@ export default {
   data() {
     return {
       collapse: false,
+      screenWidth: document.body.clientWidth
     };
   },
   //监听属性 类似于data概念
@@ -85,7 +86,14 @@ export default {
     }
   },
   //生命周期 - 创建完成（可以访问当前this实例）
-  created() {},
+  created() {
+    window.onresize = () => {
+      return (() => {
+        window.screenWidth = document.body.clientWidth;
+        this.screenWidth = window.screenWidth
+      })()
+    }
+  },
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {},
   beforeCreate() {}, //生命周期 - 创建之前
