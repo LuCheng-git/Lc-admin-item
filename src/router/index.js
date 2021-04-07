@@ -31,7 +31,7 @@ const constantRoutes = [
         name: 'sub1',
         meta: {
           title: '菜单1',
-          icon: 'el-icon-phone'
+          icon: "分发目标",
         }
       }
     ]
@@ -43,7 +43,7 @@ const constantRoutes = [
     redirect: "/menu2",
     meta: {
       title: '菜单2',
-      icon: 'el-icon-phone'
+      icon: "分发目标",
     },
     children: [
       {
@@ -52,7 +52,7 @@ const constantRoutes = [
         name: 'sub1',
         meta: {
           title: '菜单二',
-          icon: 'el-icon-phone'
+          icon: "分发目标",
         }
       },
       {
@@ -61,7 +61,7 @@ const constantRoutes = [
         name: 'sub2',
         meta: {
           title: '菜单二',
-          icon: 'el-icon-phone'
+          icon: "分发目标",
         }
       }
     ]
@@ -73,7 +73,7 @@ const constantRoutes = [
     redirect: "/menu2",
     meta: {
       title: '菜单2',
-      icon: 'el-icon-phone'
+      icon: "接入方管理",
     },
     children: [
       {
@@ -82,7 +82,7 @@ const constantRoutes = [
         name: 'sub1',
         meta: {
           title: '菜单二',
-          icon: 'el-icon-phone'
+          icon: "接入方管理",
         }
       },
       {
@@ -91,7 +91,7 @@ const constantRoutes = [
         name: 'sub2',
         meta: {
           title: '菜单二',
-          icon: 'el-icon-phone'
+          icon: "接入方管理",
         }
       }
     ]

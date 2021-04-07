@@ -9,6 +9,8 @@ import bus from '@/utils/bus'
 //ele 按需引入
 import 'element-ui/lib/theme-chalk/index.css'
 import '@/plugins/element'
+//引入svg
+import '@/icons' 
 
 Vue.config.productionTip = false
 Vue.use(router)
