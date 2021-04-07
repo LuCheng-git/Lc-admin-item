@@ -72,17 +72,40 @@ export default {
   data() {
     return {
       collapse: false,
-      screenWidth: document.body.clientWidth
+      screenWidth: document.body.clientWidth,
+      timer: false
     };
   },
   //监听属性 类似于data概念
   computed: {},
   //监控data中的数据变化
-  watch: {},
+  watch: {
+    //实时根据屏幕宽度自动收缩侧边栏
+    screenWidth(val) {
+      if (!this.timer) {
+        this.screenWidth = val;
+        this.timer = true;
+        setTimeout(() => {
+          this.auto();
+          this.timer = false;
+        }, 400);
+      }
+    }
+  },
   //方法集合
   methods: {
     collapseChange(){
        this.collapse = !this.collapse;
+    },
+    //根据窗口宽度自动收缩侧边栏
+    auto(){
+      if(this.screenWidth < 1200){
+        this.collapse = true,
+        this.$bus.emit("collapse",true)
+      }else {
+        this.collapse = false;
+        this.$bus.emit("collapse", false);
+      }
     }
   },
   //生命周期 - 创建完成（可以访问当前this实例）
@@ -93,9 +116,15 @@ export default {
         this.screenWidth = window.screenWidth
       })()
     }
+    //全剧注册collapse收缩侧边栏事件
+    this.$bus.on("collapse", state => {
+      this.collapse = state
+    })
   },
   //生命周期 - 挂载完成（可以访问DOM元素）
-  mounted() {},
+  mounted() {
+  
+  },
   beforeCreate() {}, //生命周期 - 创建之前
   beforeMount() {}, //生命周期 - 挂载之前
   beforeUpdate() {}, //生命周期 - 更新之前
