@@ -2,6 +2,7 @@
   <div class="wrapper">
     <v-head></v-head>
     <v-side></v-side>
+    
   </div>
 </template>
 

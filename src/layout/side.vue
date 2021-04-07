@@ -27,19 +27,22 @@
         collapse-transition
         mode="vertical"
       >
-        
+        <side-item
+          v-for="route in routes"
+          :key="route.path"
+          :item="route"
+          :base-path="route.path"
+         />
       </el-menu>
     </el-scrollbar>
   </aside>
 </template>
 
 <script>
-//这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
-//例如：import 《组件名称》 from '《组件路径》';
-
+import SideItem from "./sideItem";
 export default {
   //import引入的组件需要注入到对象中才能使用
-  components: {},
+  components: {SideItem},
   data() {
     return {
       collapse: false,
@@ -48,7 +51,11 @@ export default {
     };
   },
   //监听属性 类似于data概念
-  computed: {},
+  computed: {
+    routes(){
+      return this.$router.options.routes;
+    }
+  },
   //监控data中的数据变化
   watch: {
     //实时根据屏幕宽度自动收缩侧边栏

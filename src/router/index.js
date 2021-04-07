@@ -33,13 +33,34 @@ const constantRoutes = [
           title: '菜单1',
           icon: 'el-icon-phone'
         }
+      }
+    ]
+  },
+  {
+    path: '/menu2',
+    name: 'menu2',
+    component: Layout,
+    redirect: "/menu2",
+    meta: {
+      title: '菜单2',
+      icon: 'el-icon-phone'
+    },
+    children: [
+      {
+        path: '/sub1',
+        component: () => import("@/page/menu1/sub1.vue"),
+        name: 'sub1',
+        meta: {
+          title: '菜单二',
+          icon: 'el-icon-phone'
+        }
       },
       {
         path: '/sub2',
         component: () => import("@/page/menu1/sub1.vue"),
         name: 'sub2',
         meta: {
-          title: '菜单2',
+          title: '菜单二',
           icon: 'el-icon-phone'
         }
       }
@@ -50,11 +71,24 @@ const constantRoutes = [
     name: 'menu2',
     component: Layout,
     redirect: "/menu2",
+    meta: {
+      title: '菜单2',
+      icon: 'el-icon-phone'
+    },
     children: [
       {
         path: '/sub1',
         component: () => import("@/page/menu1/sub1.vue"),
         name: 'sub1',
+        meta: {
+          title: '菜单二',
+          icon: 'el-icon-phone'
+        }
+      },
+      {
+        path: '/sub2',
+        component: () => import("@/page/menu1/sub1.vue"),
+        name: 'sub2',
         meta: {
           title: '菜单二',
           icon: 'el-icon-phone'
