@@ -24,6 +24,10 @@ const constantRoutes = [
     name: 'menu1',
     component: Layout,
     redirect: "/menu1",
+    meta: {
+      title: '菜单1',
+      icon: "分发目标",
+    },
     children: [
       {
         path: '/menu1',
@@ -31,6 +35,15 @@ const constantRoutes = [
         name: 'sub1',
         meta: {
           title: '菜单1',
+          icon: "分发目标",
+        }
+      },
+      {
+        path: '/sub2',
+        component: () => import("@/page/menu1/sub2.vue"),
+        name: 'sub2',
+        meta: {
+          title: '菜单2',
           icon: "分发目标",
         }
       }
@@ -48,17 +61,8 @@ const constantRoutes = [
     children: [
       {
         path: '/sub1',
-        component: () => import("@/page/menu1/sub1.vue"),
+        component: () => import("@/page/menu2/sub1.vue"),
         name: 'sub1',
-        meta: {
-          title: '菜单二',
-          icon: "分发目标",
-        }
-      },
-      {
-        path: '/sub2',
-        component: () => import("@/page/menu1/sub1.vue"),
-        name: 'sub2',
         meta: {
           title: '菜单二',
           icon: "分发目标",
