@@ -65,36 +65,6 @@ const constantRoutes = [
         }
       }
     ]
-  },
-  {
-    path: '/menu2',
-    name: 'menu2',
-    component: Layout,
-    redirect: "/menu2",
-    meta: {
-      title: '菜单2',
-      icon: "接入方管理",
-    },
-    children: [
-      {
-        path: '/sub1',
-        component: () => import("@/page/menu1/sub1.vue"),
-        name: 'sub1',
-        meta: {
-          title: '菜单二',
-          icon: "接入方管理",
-        }
-      },
-      {
-        path: '/sub2',
-        component: () => import("@/page/menu1/sub1.vue"),
-        name: 'sub2',
-        meta: {
-          title: '菜单二',
-          icon: "接入方管理",
-        }
-      }
-    ]
   }
 ]
 

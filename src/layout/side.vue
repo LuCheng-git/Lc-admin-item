@@ -63,9 +63,10 @@ export default {
       if (!this.timer) {
         this.screenWidth = val;
         this.timer = true;
-        setTimeout(() => {
+        let setTimeID = setTimeout(() => {
           this.auto();
           this.timer = false;
+          clearTimeout(setTimeID);
         }, 400);
       }
     }
