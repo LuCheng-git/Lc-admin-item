@@ -4,6 +4,7 @@
     <v-side></v-side>
     <main class="content-box" :class="{'content-collapse':collapse}">
       <div class="content">
+        <v-tags></v-tags>
         <app-main></app-main>
       </div>
     </main>
@@ -14,8 +15,9 @@
 import VHead from './head' 
 import VSide from './side'
 import AppMain from './appMain'
+import VTags from './tags'
 export default {
-  components: {VHead, VSide, AppMain},
+  components: {VHead, VSide, AppMain, VTags},
   data() {
     return {
       collapse: false,

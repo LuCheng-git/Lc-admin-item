@@ -1,6 +1,6 @@
 const user = {
   name: "user",
-  status: {
+  state: {
     visitedViews: [],
     cachedViews: [],
     token: sessionStorage.getItem("username")
@@ -18,6 +18,7 @@ const user = {
   },
   mutations: {
     putTags(state, { data }) {
+      console.log('xxxxx')
       if (state.visitedViews.some((v) => v.path === data.path)) return;
       state.visitedViews.push(
         Object.assign({}, data, {

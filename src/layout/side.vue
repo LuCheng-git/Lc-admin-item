@@ -18,7 +18,7 @@
       </div>
       <el-menu
         class="sidebar-el-menu"
-        default-active="2"
+        :default-active="activeMenu"
         :collapse="collapse"
         background-color="#001529"
         text-color="#8d9199"
@@ -54,6 +54,15 @@ export default {
   computed: {
     routes(){
       return this.$router.options.routes;
+    },
+    activeMenu() {
+      const route = this.$route;
+      const { meta, path } = route;
+      // if set path, the sidebar will highlight the path you set
+      if (meta.activeMenu) {
+        return meta.activeMenu;
+      }
+      return path;
     }
   },
   //监控data中的数据变化
