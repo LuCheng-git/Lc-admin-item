@@ -75,6 +75,7 @@ export default {
   methods: {
     collapseChange(){
        this.collapse = !this.collapse;
+       this.$bus.emit("collapse", this.collapse);
     },
     //根据窗口宽度自动收缩侧边栏
     auto(){

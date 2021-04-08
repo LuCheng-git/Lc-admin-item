@@ -2,7 +2,7 @@
   <div class="wrapper">
     <v-head></v-head>
     <v-side></v-side>
-    <main class="content-box">
+    <main class="content-box" :class="{'content-collapse':collapse}">
       <div class="content">
         <app-main></app-main>
       </div>
@@ -17,11 +17,17 @@ import AppMain from './appMain'
 export default {
   components: {VHead, VSide, AppMain},
   data() {
-    return {};
+    return {
+      collapse: false,
+    };
   },
   computed: {},
   methods: {},
-  created() {},
+  created() {
+    this.$bus.on("collapse", state => {
+      this.collapse = state;
+    });
+  },
 };
 </script>
 <style scoped></style>

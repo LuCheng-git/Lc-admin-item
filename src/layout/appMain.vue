@@ -3,13 +3,18 @@
     name="move"
     mode="out-in"
   >
-    <router-view :key="key" />  
+    <keep-alive :include="cachedViews">
+      <router-view :key="key" />  
+    </keep-alive>
   </transition>
 </template>
 
 <script>
 export default ({
   computed: {
+    cachedViews(){
+      return this.$store.getters.cachedViews
+    },
     key(){
       return this.$route.path
     }
